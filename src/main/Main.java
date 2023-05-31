@@ -2,7 +2,7 @@ package main;
 
 import model.Company;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main{
 
@@ -23,7 +23,7 @@ public class Main{
                     "1. See the cheapest route to the destination of a worker" + "\n"+
                     "2. YA ESTAREMOS POR VER QUÉ MONDÁ HACER CON ESTA OPCION" + "\n");
             option = sc.nextInt();
-
+            sc.nextLine();
             switch(option){
                 case 1:
                     destinationWorker();
@@ -42,6 +42,18 @@ public class Main{
     private void destinationWorker() {
         String city1,city2 = "";
         System.out.println("Enter the initial point city:");
-        city1 = sc.nextLine();
+        city1 = sc.next();
+        System.out.println("Enter the destiny of the delivery:");
+        city2 = sc.next();
+
+        List<String> ans= company.djkSolution(city1,city2);
+        System.out.println("Shortest Path: ");
+        for(int i=0; i<ans.size();i++){
+            System.out.println(ans.get(i));
+        }
+
+
+
+
     }
 }

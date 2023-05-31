@@ -37,6 +37,8 @@ public class AdjacencyGraph<T> implements Graph<T> {
         destinationVertex.addEdge(edge);
     }
 
+
+
     @Override
     public void removeVertex(T data) {
         Vertex<T> vertexToRemove = new Vertex<>(data);
@@ -132,6 +134,7 @@ public class AdjacencyGraph<T> implements Graph<T> {
 
     @Override
     public List<T> dijkstra(T startVertex, T endVertex) {
+
         Vertex<T> source = getVertex(startVertex);
         Vertex<T> destination = getVertex(endVertex);
 
@@ -157,7 +160,7 @@ public class AdjacencyGraph<T> implements Graph<T> {
             int currentDistance = distances.get(currentVertex);
 
             if (currentDistance == Integer.MAX_VALUE) {
-                break;
+                //AQUI VA UN BREAK
             }
 
             List<Edge<T>> edges = adjacencyList.get(currentVertex);
@@ -187,6 +190,7 @@ public class AdjacencyGraph<T> implements Graph<T> {
 
         return path;
     }
+
 
     @Override
     public int[][] floydWarshall() {
@@ -246,4 +250,5 @@ public class AdjacencyGraph<T> implements Graph<T> {
         }
         return null;
     }
+
 }
