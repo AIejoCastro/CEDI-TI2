@@ -15,7 +15,6 @@ public class Main{
         while (option !=0){
             System.out.println("Please select an option: " + "\n");
             option = sc.nextInt();
-            sc.nextLine();
 
             switch(option){
                 case 1:
